@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <style>
+        .angular-google-map-container {
+            width: 100%;
+            height: 504px;
+        }
+    </style>
+
+    <link href="/css/preview-frame.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+    <script>
+        // Ionic Starter App
+
+        // angular.module is a global place for creating, registering and retrieving Angular modules
+        // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+        // the 2nd parameter is an array of 'requires'
+        // 'starter.services' is found in services.js
+        // 'starter.controllers' is found in controllers.js
+        angular.module('app', ['ionic'])
+
+        .run(function ($ionicPlatform) {
+            $ionicPlatform.ready(function () {
+                // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+                // for form inputs)
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                }
+                if (window.StatusBar) {
+                    // org.apache.cordova.statusbar required
+                    StatusBar.styleDefault();
+                }
+            });
+        })
+
+        .config(function ($stateProvider, $urlRouterProvider) {
+
+            // Ionic uses AngularUI Router which uses the concept of states
+            // Learn more here: https://github.com/angular-ui/ui-router
+            // Set up the various states which the app can be in.
+            // Each state's controller can be found in controllers.js
+            $stateProvider
+
+                .state('modal2', {
+                url: '/modal',
+                templateUrl: 'modal2.html'
+            })
+
+            .state('page6', {
+                url: '/',
+                templateUrl: 'page6.html'
+            });
+
+            // if none of the above states are matched, use this as the fallback
+
+            $urlRouterProvider.otherwise('/');
+
+
+        });
+    </script>
+</head>
+
+<body ng-app="app" animation="slide-left-right-ios7">
+    <div>
+        <div>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Back</ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+        </div>
+    </div>
+    <script id="modal2.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <h1 class="title">Ваш заказ</h1>
+                <div class="buttons">
+                    <a href="#/" class="button button-positive button-clear">Отмена</a>
+                </div>
+            </ion-header-bar>
+            <ion-content padding="true" scroll="false" class="has-header">
+                <div class="list card">
+                    <div class="item item-divider">Водитель</div>
+                    <div class="item item-body">
+                        <ion-list>
+                            <ion-item class="item-thumbnail-left">
+                                <img src="/img/avatar-img.png">
+                                <h2>ФИО</h2>
+                                <p>Марка авто</p>
+                            </ion-item>
+                            <ion-item>Рейтинг:</ion-item>
+                            <ion-item>Телефон:</ion-item>
+                            <ion-item class="royal">Статус заказа:</ion-item>
+                        </ion-list>
+                    </div>
+                </div>
+            </ion-content>
+        </div>
+    </script>
+    <script id="page6.html" type="text/ng-template">
+        <ion-view title="Bishkek Taxi">
+            <ion-content padding="true" class="has-header">
+                <form>
+                    <label class="item item-input" name="Адрес назначения">
+                        <span class="input-label">Откуда</span>
+                        <input type="text" placeholder="Ваше местоплолжение">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Куда</span>
+                        <input type="text" placeholder="Адрес назначения">
+                    </label>
+                </form>
+                <a href="#/modal" class="button button-positive button-block">Вызывать такси!</a>
+                <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+                    <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+                </div>
+            </ion-content>
+        </ion-view>
+    </script>
+</body>
+
+</html>
