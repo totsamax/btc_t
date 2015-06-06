@@ -3,5 +3,11 @@
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0"
+  },
+  "dependencies": {
+    "ng-cordova": "~0.0.3",
+    "ngStorage": "~0.3.0",
+    "pusher": "~2.2.4",
+    "angular-pusher": "~0.0.14"
   }
 }

@@ -1,0 +1,19 @@
+<ion-view title="Bishkek Taxi">
+    <ion-content padding="true" class="has-header" ng-controller="MainCtrl">
+        <form>
+            <label class="item item-input" name="Адрес назначения">
+                <span class="input-label">Откуда</span>
+                <input type="text" ng-model="from" placeholder="Ваше местоплолжение">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Куда</span>
+                <input type="text" ng-model="where" placeholder="Адрес назначения">
+            </label>
+        </form>
+        <!--        <a href="#/modal" class="button button-positive button-block">Вызывать такси!</a>-->
+        <a class="button button-positive button-block" ng-click="showModal()">Вызывать такси {{from}}!</a>
+        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        </div>
+    </ion-content>
+</ion-view>
